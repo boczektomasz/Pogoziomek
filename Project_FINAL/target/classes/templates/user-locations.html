@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>user preferences</title>
+</head>
+<body>
+<h2>Lista lokalizacji i preferencji</h2><br/>
+    <table>
+        <thead>
+        <tr>
+            <th>Nazwa lokalizacji</th>
+            <th>Temperatura</th>
+            <th>Ciśnienie</th>
+            <th>Usuń</th>
+            <th>Edytuj</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="weatherPreferences: ${preferences}">
+            <td th:text="${weatherPreferences.weatherLocation}"></td>
+            <td th:text="${weatherPreferences.hasTemp} ? ${weatherPreferences.temp} : '-' "></td>
+            <td th:text="${weatherPreferences.hasPressure} ? ${weatherPreferences.pressure} : '-'"></td>
+            <td><a th:href="@{'/user/delete-confirm/' + ${weatherPreferences.id}}">Delete</a></td>
+            <td><a th:href="@{'/edit-user-location/' + ${weatherPreferences.id}}">Edit</a></td>
+            <td><a th:href="@{'/display-current-forecast-in-certain-location/' + ${weatherPreferences.id}}">Show current weather data</a></td>
+        </tr>
+    </table><br/>
+<p><a href="/add-user-location">Add new weather location</a></p>
+</body>
+</html>

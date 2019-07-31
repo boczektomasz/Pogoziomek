@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Edycja preferencji dla danej lokalizacji</title>
+</head>
+<body>
+<form action="#" th:action="@{/save-user-preference}" th:object="${preferences}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <p>Nazwa lokalizacji: <input type="text" th:field="*{weatherLocation}"/></p>
+    <p>Temperatura: <input type="text" th:field="*{temp}"/></p>
+    <p>Ciśnienie: <input type="text" th:field="*{pressure}"/></p>
+    <p>URL: <input type="text" th:field="*{urlForCurrentForecast}"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>

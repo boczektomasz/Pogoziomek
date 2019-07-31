@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Authorities</title>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>authority id</th>
+        <th>name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="authority: ${authorities}">
+        <td th:text="${authority.id}"></td>
+        <td th:text="${authority.authority}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

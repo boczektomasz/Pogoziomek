@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add location</title>
+</head>
+<body>
+<form action="#" th:action="@{/save-user-preference}" th:object="${newpreference}" method="post">
+    <input type="hidden" th:field="*{id}"/>
+    <p>Nazwa twojej lokalizacji: <input type ="text" th:field="*{weatherLocation}"</p>
+    <p>URL twojej lokalizacji: <input type="text" th:field="*{urlForCurrentForecast}"</p>
+    <p>Temperatura: <input type="text" th:field="*{temp}"/></p>
+    <p>Ciśnienie: <input type="text" th:field="*{pressure}"/></p>
+    <p><input type="submit" value="Submit"/> <input type="reset" value="Reset"/></p>
+</form>
+</body>
+</html>

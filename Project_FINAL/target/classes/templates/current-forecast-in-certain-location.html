@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>certain-weather</title>
+</head>
+<body>
+<h2>Weather forecast - London</h2>
+<table>
+    <thead>
+    <tr>
+        <th>City</th>
+        <th>Temperature</th>
+        <th>Pressure</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td th:text="${weatherForecast.name}"></td>
+        <td th:text="${weatherForecast.main.temp}"></td>
+        <td th:text="${weatherForecast.main.pressure}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

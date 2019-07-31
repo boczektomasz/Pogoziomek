@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete weather preference</title>
+</head>
+<body>
+<h2>Czy na pewno chcesz usunąć tę lokalizację pogodową?</h2>
+<a type="@{preferences.weatherLocation}"/>
+<a th:href="@{'/user/delete/' + ${preferences.id}}">Tak</a>&nbsp;&nbsp;&nbsp;<a href="/user-locations">Nie</a>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>persons</title>
+</head>
+<body>
+
+<h2>Lista użytkowników:</h2>
+<table>
+    <thead>
+    <tr>
+        <th>login</th>
+        <th>password</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="person: ${persons}">
+        <td th:text="${person.username}"></td>
+        <td th:text="${person.password}"></td>
+        <td><a th:href="@{'/person/edit/' + ${person.id}}">Edit</a> </td>
+        <td><a th:href="@{'/person/delete/' + ${person.id}}">Delete</a> </td>
+    </tr>
+    </tbody>
+</table>
+<p/>
+</body>
+</html>
